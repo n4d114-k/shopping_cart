@@ -4,7 +4,7 @@
 :root {
   --paynes-gray: #393e46;
   --jonquil-yellow: #ffd369;
-  --isabelline-grey: #eeeeee;
+  --isabelline-gray: #eeeeee;
   --salmon-red: #ff8869;
 }
 
@@ -17,12 +17,9 @@
 
 body {
   margin: 0;
-  background-color: var(--isabelline-grey);
+  background-color: var(--isabelline-gray);
   font-family: 'Montserrat', sans-serif;
   color: var(--paynes-gray);
-}
-
-br {
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -36,7 +33,7 @@ nav {
   font-family: 'Major Mono Display', monospace;
   height: 10vh;
   background-color: var(--paynes-gray);
-  color: var(--isabelline-grey);
+  color: var(--isabelline-gray);
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -51,6 +48,8 @@ nav {
 .app-logo {
   height: 6vh;
   margin: 20px;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 h1 {
@@ -71,7 +70,7 @@ nav li {
 }
 
 nav a {
-  color: var(--isabelline-grey);
+  color: var(--isabelline-gray);
   text-decoration: none;
 }
 
@@ -104,13 +103,15 @@ nav a:hover {
 
 .product-card h3 {
   background-color: var(--paynes-gray);
-  color: var(--isabelline-grey);
+  color: var(--isabelline-gray);
   padding: 10px 0;
   font-weight: normal;
 }
 
 .product-card img {
-  max-width: 500px;
+  max-width: 300px;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 .product-card form {
@@ -118,11 +119,16 @@ nav a:hover {
 }
 
 .product-card label {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .product-card input[type="number"] {
   width: 40px;
+  border: none;
+  border-bottom: 1px solid var(--paynes-gray);
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0 5px;
 }
 
 .product-card p {
@@ -139,5 +145,5 @@ nav a:hover {
 
 .product-card input[type="submit"]:hover {
   cursor: pointer;
-  background-color: #FFEB69;
+  background-color: #FFDE8F;
 }
