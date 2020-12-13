@@ -1,21 +1,14 @@
-import logo from './logo.svg';
+import React from 'react';
+
+import Navbar from './components/Navbar'
+import Home from './components/Home'
 
 function App() {
   return (
     <div className="app-container">
-      <header>
-        <nav>
-          <img src={logo} className="app-logo" alt="logo" />
-          <h1>GROCERY STORE</h1>
-          <ul>
-            <li><a href="#">home</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">cart</a></li>
-          </ul>
-        </nav>
-      </header>
+      <Navbar />
       <br />
-      <p>Text sample</p>
+      <Home />
     </div>
   );
 }

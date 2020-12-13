@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 :root {
-  --black: #222831;
   --paynes-gray: #393e46;
   --jonquil-yellow: #ffd369;
   --isabelline-grey: #eeeeee;
@@ -30,24 +29,23 @@ br {
   user-select: none;
 }
 
-/* header styles */
 
-header {
+/* Navbar Styles */
+
+nav {
   font-family: 'Major Mono Display', monospace;
   height: 10vh;
   background-color: var(--paynes-gray);
   color: var(--isabelline-grey);
-  position: relative;
-}
-
-nav {
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
   align-items: center;
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  z-index: 2;
 }
 
 .app-logo {
@@ -80,4 +78,66 @@ nav a {
 nav a:hover {
   color: var(--jonquil-yellow);
   text-decoration: underline;
+}
+
+.items-counter {
+  color: var(--jonquil-yellow);
+}
+
+
+/* Products List Styles */
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--paynes-gray);
+  border-radius: 3px;
+  margin: 3vh;
+  text-align: center;
+}
+
+.product-card h3 {
+  background-color: var(--paynes-gray);
+  color: var(--isabelline-grey);
+  padding: 10px 0;
+  font-weight: normal;
+}
+
+.product-card img {
+  max-width: 500px;
+}
+
+.product-card form {
+  margin-top: 10px;
+}
+
+.product-card label {
+  margin-right: 10px;
+}
+
+.product-card input[type="number"] {
+  width: 40px;
+}
+
+.product-card p {
+  margin: 10px 0;
+}
+
+.product-card input[type="submit"] {
+  width: 100%;
+  border: none;
+  background-color: var(--jonquil-yellow);
+  color:inherit;
+  padding: 10px;
+}
+
+.product-card input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: #FFEB69;
 }
