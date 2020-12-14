@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import Products from '../data.js';
+import React from 'react';
+import { connect } from 'react-redux';
 
+import addToCart from '../actions/addAction';
+import Products from '../data.js';
 import SaleWarning from './SaleWarning';
 
-function ProductsList() {
+function ProductsList(props) {
 
-  function addToCart(e) {
+  function onSubmit(e) {
     e.preventDefault();
-    console.log(e.target["0"].value);
+    e.target[1].setAttribute("disabled", "disabled");
   }
 
   return(
@@ -18,11 +20,11 @@ function ProductsList() {
           <div className="product-card" key={product.inputId}>
             <h3>{product.title}</h3>
             <img src={product.img} alt={product.title}/>
-            <form onSubmit={addToCart}>
+            <form onSubmit={onSubmit}>
               <label htmlFor={product.inputId}>Amount(in kg)</label>
               <input type="number" id={product.inputId} name="kilograms" min="1"/>
-              <p>Total price: <b>{product.price}$</b></p>
-              <input type="submit" value="Add to Cart" />
+              <p>Total price: <b>{product.totalPrice(1)}$</b></p>
+              <input type="submit" value="Add to Cart" onClick={props.addToCart}/>
             </form>
           </div>
         ))}
@@ -31,4 +33,4 @@ function ProductsList() {
   );
 }
 
-export default ProductsList;
+export default connect(null, { addToCart })(ProductsList);

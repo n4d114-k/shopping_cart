@@ -1,0 +1,2 @@
+export const ADD_PRODUCT = 'ADD_PRODUCT';
+export const GET_PRODUCTS_AMOUNT = 'GET_PRODUCTS_AMOUNT';

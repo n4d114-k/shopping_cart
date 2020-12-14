@@ -14,7 +14,7 @@ function SaleWarning() {
 
   return (
     <div className="sale-warning" style={{ width: '100%' }}>
-      <p style={styles}><b>SALE! </b> Now you can get a 50% discount for every third kilogram</p>
+      <p style={styles}><b>SALE! </b> Now you can get a 50% discount for every third kilogram of <b>papayas</b></p>
     </div>
   );
 }
