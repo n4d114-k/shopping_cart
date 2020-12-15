@@ -1,25 +1,32 @@
 import * as actionTypes from './types';
-import Products from '../data.js';
 
-function addToCart(e, productName, amount) {
+/*export function addToCart(e, productName) {
   return(dispatch) => {
     e.preventDefault();
-    e.target[1].setAttribute("disabled", "disabled");
+    e.target.setAttribute("disabled", "disabled");
 
     const findProduct = Products.find((product) => {
       const productObj = product.title === productName;
       return productObj;
     });
-    findProduct.amount = amount;
 
     dispatch(
       {
-        type: actionTypes.ADD_PRODUCT,
+        type: actionTypes.ADD_PRODUCT_TO_CART,
         payload: productName,
-        amount: amount
       }
     );
   }
-}
+} */
 
-export default addToCart;
+export const addToCart = (e, productTitle) => {
+  return(dispatch) => {
+    console.log('Adding to Cart ', productTitle);
+    e.target.setAttribute("disabled", "disabled");
+
+    dispatch({
+      type: actionTypes.ADD_PRODUCT_TO_CART,
+      payload: productTitle
+    });
+  }
+}

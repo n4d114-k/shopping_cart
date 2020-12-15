@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import getProductsAmount from '../actions/getAction';
+import { getAmount } from '../actions/getAction'
 import logo from './../logo.svg';
 
 function Navbar(props) {
-  useEffect(() => {
-    getProductsAmount();
+
+  useEffect(()=> {
+    getAmount();
   }, []);
 
   return (
@@ -17,7 +18,7 @@ function Navbar(props) {
         <ul>
           <li><Link to="/">home</Link></li>
           <li><Link to="about">about</Link></li>
-          <li><Link to="cart">cart <span className="items-counter">{props.cartProps}</span></Link></li>
+          <li><Link to="cart">cart <span className="items-counter">{props.cartProps.productsAmount}</span></Link></li>
         </ul>
       </nav>
   );
@@ -25,6 +26,6 @@ function Navbar(props) {
 
 const mapStateToProps = state => ({
   cartProps: state.cartState
-})
+});
 
-export default connect(mapStateToProps, { getProductsAmount })(Navbar);
+export default connect(mapStateToProps, { getAmount })(Navbar);

@@ -99,6 +99,9 @@ nav a:hover {
   border-radius: 3px;
   margin: 3vh;
   text-align: center;
+  -webkit-box-shadow: 10px 10px 0px 0px #8892a6;
+  box-shadow: 10px 10px 0px 0px #8892a6;
+
 }
 
 .product-card h3 {
@@ -108,42 +111,105 @@ nav a:hover {
   font-weight: normal;
 }
 
+.product-card h3 span {
+  color: var(--jonquil-yellow);
+}
+
 .product-card img {
   max-width: 300px;
   -webkit-user-drag: none;
   user-drag: none;
 }
 
-.product-card form {
-  margin-top: 10px;
-}
-
-.product-card label {
-  margin-right: 15px;
-}
-
-.product-card input[type="number"] {
-  width: 40px;
-  border: none;
-  border-bottom: 1px solid var(--paynes-gray);
-  background-color: transparent;
-  font-family: inherit;
-  padding: 0 5px;
-}
-
-.product-card p {
-  margin: 10px 0;
-}
-
-.product-card input[type="submit"] {
+.product-card button {
   width: 100%;
   border: none;
   background-color: var(--jonquil-yellow);
+  border-top: 1px solid var(--paynes-gray);
   color:inherit;
   padding: 10px;
 }
 
-.product-card input[type="submit"]:hover {
+.product-card button:hover {
   cursor: pointer;
   background-color: #FFDE8F;
+}
+
+.product-card button:disabled,
+.product-card button[disabled] {
+  background-color: var(--isabelline-gray);
+  cursor: default;
+}
+
+/* Cart Styles*/
+
+.products-cart-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.product-cart-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--paynes-gray);
+  border-radius: 3px;
+  margin: 10px;
+}
+
+.product-cart-card .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2vw;
+  flex-grow: 2;
+}
+
+.product-cart-card .title p {
+  margin-left: 4vw;
+  font-weight: bold;
+}
+
+.product-cart-card img {
+  border: 1px solid var(--paynes-gray);
+  max-width: 100px;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.product-cart-card .price {
+  margin: 2vw;
+}
+
+.product-cart-card .amount {
+  display: flex;
+  justify-self: flex-end;
+  flex-direction: row;
+  align-items: center;
+  margin: 2vw;
+}
+
+.product-cart-card .amount button {
+  border: none;
+  border-radius: 50%;
+  height: 2vw;
+  width: 2vw;
+  background-color: var(--jonquil-yellow);
+  margin: 5px;
+}
+
+.product-cart-card .amount .decrease {
+  background-color: var(--salmon-red);
+}
+
+.product-cart-card .amount button:hover {
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.product-cart-card .amount .total {
+  margin: 20px;
 }
