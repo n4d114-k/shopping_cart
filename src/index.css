@@ -26,6 +26,10 @@ body {
   user-select: none;
 }
 
+.about-section {
+  margin: 5vh 50px;
+  text-align: justify;
+}
 
 /* Navbar Styles */
 
@@ -192,7 +196,7 @@ nav a:hover {
   margin: 2vw;
 }
 
-.product-cart-card .amount button {
+.product-cart-card button {
   border: none;
   border-radius: 50%;
   height: 2vw;
@@ -201,15 +205,23 @@ nav a:hover {
   margin: 5px;
 }
 
-.product-cart-card .amount .decrease {
+.product-cart-card .delete {
   background-color: var(--salmon-red);
 }
 
-.product-cart-card .amount button:hover {
+.product-cart-card button:hover {
   cursor: pointer;
   border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .product-cart-card .amount .total {
   margin: 20px;
+}
+
+.cart-total {
+  margin: 2vh 20px 0 0;
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: overline;
 }
