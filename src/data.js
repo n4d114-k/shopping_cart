@@ -6,7 +6,7 @@ const Products = [
   {
     title: 'Bananas',
     img: bananasImage,
-    inputId: 'bananas-amount',
+    productId: 1,
     price: 10,
     amount: 0,
     inCart: false,
@@ -18,7 +18,7 @@ const Products = [
   {
     title: 'Apples',
     img: appleImage,
-    inputId: 'apples-amount',
+    productId: 2,
     price: 8,
     amount: 0,
     inCart: false,
@@ -30,7 +30,7 @@ const Products = [
   {
     title: 'Papayas',
     img: papayaImage,
-    inputId: 'papayas-amount',
+    productId: 3,
     price: 10,
     amount: 0,
     inCart: false,

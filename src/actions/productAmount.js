@@ -8,3 +8,12 @@ export const productAmount = (action, productTitle) => {
     });
   }
 }
+
+export const deleteProduct = (productTitle) => {
+  return(dispatch) => {
+    dispatch({
+      type: actionTypes.DELETE_FROM_CART,
+      payload: productTitle
+    });
+  }
+}

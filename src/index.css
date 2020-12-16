@@ -201,8 +201,9 @@ nav a:hover {
   border-radius: 50%;
   height: 2vw;
   width: 2vw;
+  font-size: .7em;
   background-color: var(--jonquil-yellow);
-  margin: 5px;
+  margin: 15px;
 }
 
 .product-cart-card .delete {
@@ -212,6 +213,19 @@ nav a:hover {
 .product-cart-card button:hover {
   cursor: pointer;
   border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.product-cart-card button:disabled,
+.product-cart-card button[disabled] {
+  background-color: var(--isabelline-gray);
+  border: 1px solid var(--jonquil-yellow);
+
+}
+
+.product-cart-card button:disabled:hover,
+.product-cart-card button[disabled]:hover {
+  cursor: default;
+  border: none;
 }
 
 .product-cart-card .amount .total {

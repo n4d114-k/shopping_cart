@@ -34,20 +34,34 @@ function cartReducer(state = initialState, action) {
         state.products[foundProduct].amount += 1;
         return {
           ...state,
+          productsAmount: state.productsAmount + 1,
           cartCost: state.cartCost + state.products[foundProduct].price,
         };
       case actionTypes.DECREASE_AMOUNT:
+        let newProductsAmount = 0;
         let newCartCost = 0;
         if(state.products[foundProduct].amount === 0) {
           state.products[foundProduct].amount = 0;
           newCartCost = state.cartCost;
+          newProductsAmount = state.productsAmount;
         } else {
           state.products[foundProduct].amount -= 1;
-          newCartCost = state.cartCost - state.products[foundProduct].price
+          newCartCost = state.cartCost - state.products[foundProduct].price;
+          newProductsAmount = state.productsAmount - 1;
         }
         return {
           ...state,
+          productsAmount: newProductsAmount,
           cartCost: newCartCost
+        };
+      case actionTypes.DELETE_FROM_CART:
+        let prevAmount = state.products[foundProduct].amount;
+        state.products[foundProduct].amount = 0;
+        state.products[foundProduct].inCart = false;
+        return {
+          ...state,
+          productsAmount: state.productsAmount - prevAmount,
+          cartCost: state.cartCost - (prevAmount * state.products[foundProduct].price)
         };
       default:
         return state;
